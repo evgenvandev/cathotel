@@ -16,5 +16,6 @@ class Hotel {
 	
 	static mapping = {
 		country lazy: false
+		sort name: 'asc'
 	}
 }

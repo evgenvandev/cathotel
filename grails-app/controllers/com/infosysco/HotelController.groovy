@@ -51,6 +51,8 @@ class HotelController {
 					eq('name', "${params.country}")
 				}
 			}
+			order("star", "desc")
+			order("name", "asc")
 		}
 		
 		return [hotels: hotels, term: params.hotelsearch, termcountry: params.country]
