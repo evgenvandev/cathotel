@@ -11,7 +11,7 @@
 			<label for="hotelsearch">Hotel</label>
 			<g:textField name="hotelsearch" />
 			<g:select name="country"
-				from="${com.infosysco.Country.list()}"
+				from="${countres}"
 				value="name"
 				optionKey="name"/>
 			

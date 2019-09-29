@@ -4,6 +4,8 @@
 		<meta name="layout" content="main" />
 	</head>
 	<body>
+		<g:if test="${hotels}">
+	
 		<h1>Results</h1>
 		<p>Searched ${com.infosysco.Hotel.count()} records
 		for items matching <em>${term}--${termcountry}</em>.
@@ -15,5 +17,11 @@
 			</g:each>
 		</ul>
 		<g:link action='search'>Search Again</g:link>
+		
+		</g:if>
+		<g:else>
+			<h1>По Вашему запросу ничего не найдено.</h1>
+			<g:link action='search'>Search Again</g:link>
+		</g:else>
 	</body>
 </html>
