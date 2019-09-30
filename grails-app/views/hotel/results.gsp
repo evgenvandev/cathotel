@@ -43,7 +43,7 @@
 		</g:if>
 		<g:else>
 			<h1>По Вашему запросу ничего не найдено.</h1>
-			<g:link action='search'>Search Again</g:link>
+			<g:link action='search'>Новый поиск</g:link>
 		</g:else>
 	</body>
 </html>
