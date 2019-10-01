@@ -10,40 +10,10 @@ class HotelController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
 	def search = {
-		def collUnique = uniqueColl(com.infosysco.Country.list())
-		//def collUnique = com.infosysco.Country.list().unique()
-		//return [countres: com.infosysco.Country.list().toSet()]
-		return [countres: collUnique]
-	}
-	
-	def uniqueColl(def list) {
-		Set uniqueColl = []
-		list.each{
-			if (!uniqueColl.contains(it)) {
-				uniqueColl << it
-			}
-		}
-		return uniqueColl
+		return [countres: com.infosysco.Country.list()]
 	}
 	
 	def results = {
-		//def findCountry = new Country(name: "${params.country}")
-		//def hotels = Hotel.findAllByNameAndCountryLike("%${params.hotelsearch}%", findCountry)
-		//def hotels = Hotel.findAllByCountryAndNameLike(findCountry, "%${params.hotelsearch}%")
-		//def hotels = Hotel.findAllByCountryAndNameLike(new Country(name: "params.country"), "%${params.hotelsearch}%")
-		//def hotels = Hotel.findAllByNameLike("%${params.hotelsearch}%")
-		/*def hotelToFind = new Hotel(name: "%${params.hotelsearch}%")
-		def hotels = Hotel.findAll(hotelToFind)*/
-		
-		/*def hotels = Hotel.createCriteria().list {
-			and {
-				ilike('name', "%${params.hotelsearch}%")
-				country {
-					eq('name', "${params.country}")
-				}
-			}
-		}*/
-		
 		def hotels = Hotel.withCriteria{
 			and {
 				ilike('name', "%${params.hotelsearch}%")
@@ -55,7 +25,7 @@ class HotelController {
 			order("name", "asc")
 		}
 		
-		return [hotels: hotels, term: params.hotelsearch, termcountry: params.country]
+		return [hotels: hotels]
 	}
 	
     def index(Integer max) {

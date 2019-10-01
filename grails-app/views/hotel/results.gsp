@@ -7,15 +7,9 @@
 		<g:if test="${hotels}">
 	
 		<h1>Результаты поиска</h1>
-		<p><!--Searched ${com.infosysco.Hotel.count()} records
-		for items matching <em>${term}--${termcountry}</em>.-->
+		<p>
 		Найдено <strong>${hotels.size()}</strong> отелей.
 		</p>
-		<!-- <ul>
-			<g:each var="hotel" in="${hotels}">
-				<li>${hotel.name}---${hotel.star}</li>
-			</g:each>
-		</ul> -->
 		
 		<table>
 			<thead>

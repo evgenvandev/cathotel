@@ -592,3 +592,20 @@ img.grails-logo {
     height:340px;
     margin-top:-10px;
 }
+
+.navblock  ul{
+	background: #0083ca; /* Цвет фона */
+    list-style: none; /* Убираем маркеры */
+    margin: 0; padding: 0; /* Обнуляем все отступы */
+    overflow: hidden; /* Отменяем обтекание */
+}
+
+.navblock  li{
+	float: left; /* Выстраиваем по горизонтали */
+}
+
+.navblock  a{
+	display: block; /* Блочный элемент */
+    padding: 7px 15px; /* Поля вокруг текста */
+    color: #fff; /* Цвет текста */
+}
